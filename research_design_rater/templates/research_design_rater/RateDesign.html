@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Design {{ current }} / {{ total }}
+{% endblock %}
+
+{% block content %}
+    <div class="design-block">
+        <pre style="white-space: pre-wrap;">{{ design_text }}</pre>
+    </div>
+
+    {% formfield player.rating %}
+    {% formfield player.comment %}
+
+    <button class="btn btn-primary">Weiter</button>
+{% endblock %}
