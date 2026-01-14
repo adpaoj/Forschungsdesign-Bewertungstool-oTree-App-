@@ -1,17 +1,30 @@
 {% extends "global/Page.html" %}
-{% load otree %}
-
-{% block title %}
-    Design {{ current }} / {{ total }}
-{% endblock %}
-
 {% block content %}
-    <div class="design-block">
-        <pre style="white-space: pre-wrap;">{{ design_text }}</pre>
-    </div>
 
-    {% formfield player.rating %}
-    {% formfield player.comment %}
+<h4>Design ({{ current }} / {{ total }})</h4>
 
-    <button class="btn btn-primary">Weiter</button>
+<div style="display:flex; gap:20px;">
+
+  <!-- PDF viewer -->
+  <div style="flex:1; border:1px solid #ddd; padding:10px;">
+    <iframe
+      src="{% static pdf_path %}"
+      width="100%"
+      height="600px"
+      style="border:none;">
+    </iframe>
+  </div>
+
+  <!-- Rating form -->
+  <div style="width:360px; border:1px solid #eee; padding:12px;">
+    <form method="post">
+      {{ formfields }}
+      <button class="btn btn-primary mt-2">Weiter</button>
+    </form>
+  </div>
+
+</div>
+
 {% endblock %}
+
+
