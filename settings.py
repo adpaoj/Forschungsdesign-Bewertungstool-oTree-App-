@@ -1,5 +1,13 @@
 from os import environ
 
+ROOMS = [
+    dict(
+        name='bewertung',
+        display_name='Forschungsdesign-Bewertung',
+    ),
+]
+
+
 SESSION_CONFIGS = [
     {
         'name': 'research_design_rater',
