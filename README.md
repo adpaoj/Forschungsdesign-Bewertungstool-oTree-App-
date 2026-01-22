@@ -1,21 +1,20 @@
 # Forschungsdesign-Bewertungstool-oTree-App-
-Diese oTree-Applikation ermöglicht es, verschiedene Forschungsdesigns (als Textdateien) zufällig und anonymisiert zu bewerten. Die Ergebnisse werden anschließend als CSV exportiert und dienen als Grundlage für unsere weitere Analyse und Entwicklung des KI-gestützten RAG-Systems.
+Diese oTree-Applikation ermöglicht es, verschiedene Forschungsdesigns (als PDF) zufällig und anonymisiert zu bewerten. Die Ergebnisse werden anschließend als CSV exportiert und dienen als Grundlage für unsere weitere Analyse und Entwicklung des KI-gestützten RAG-Systems.
 
 ## 🔧 Funktionalität der Anwendung
 
-- Die App lädt automatisch alle .txt-Dateien aus dem Ordner designs/.
+- Die App lädt automatisch alle .pdf-Dateien aus dem Ordner designs/.
 - Jede Datei enthält ein Forschungsdesign.
 - Pro Datei wird eine Bewertungsrunde erzeugt.
 - Die Reihenfolge der Designs wird für jede Sitzung zufällig gemischt.
 - Für jedes Design werden folgende Daten gespeichert:
-   - design_id (aus dem Dateinamen)
-   - design_text (vollständiger Inhalt der .txt-Datei)
-   - rating (Skala 1–7)
+   - experiment_title (aus dem Dateinamen)
+   - rating (Skala 1–5)
    - comment (optional)
 
 ## 📁 Vorbereitung: Designs hochladen
-- Laden Sie im Ordner „designs“ für jedes Design eine TXT-Datei hoch.
-- Der Dateiname muss eine Zahl sein. Die Zahl ist die design_id, die später in der Auswertung zugeordnet wird.
+- Laden Sie im Ordner research_design_rater/static/research_design_rater/designs für jedes Design eine pdf-Datei hoch.
+- Der Dateiname muss eine Zahl sein. Die Zahl ist die design id (experiment_title), die später in der Auswertung zugeordnet wird.
 - Dateien werden automatisch sortiert und eingelesen.
 
 ## ▶️ Ablauf einer Bewertungssitzung
@@ -23,7 +22,7 @@ Diese oTree-Applikation ermöglicht es, verschiedene Forschungsdesigns (als Text
 - Session-Link öffnen (wird vom Studierendenteam bereitgestellt)
 - Die App zeigt ein kurzes Intro
 - Jedes Design wird einzeln angezeigt
-  - bitte Bewertung 1–7 abgeben
+  - bitte Bewertung 1–5 abgeben
   - optional einen Kommentar eintragen
 - Am Ende erscheint eine Danke-Seite
 
