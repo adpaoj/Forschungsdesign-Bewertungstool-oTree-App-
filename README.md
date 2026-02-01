@@ -58,6 +58,7 @@ Nach dem Export der oTree-Daten können aus der CSV-Datei automatisch strukturie
    cd scripts
    
 3. Metadaten-Skript ausführen:
+   ```bash
    python generate_metadata.py
    
 4. Ergebnisse prüfen:
