@@ -37,6 +37,38 @@ Nach Abschluss Ihrer eigenen Sitzung:
 
 *Bitte diese CSV im MS Teams-Chat an uns senden*
 
+## ⚙️ Metadaten generieren
+
+Nach dem Export der oTree-Daten können aus der CSV-Datei automatisch strukturierte Metadaten für jedes Forschungsdesign erzeugt werden.
+
+### Voraussetzungen
+- Python 3.9 oder neuer  
+- Installierte Python-Pakete (u. a. `pandas`, `PyPDF2`)
+- Die exportierte oTree-CSV liegt im **Projekt-Root-Verzeichnis**
+- Die PDF-Dateien befinden sich in folgenden Ordnern (je nach Sprache):
+  - `research_design_rater/static/research_design_rater/designs/pdf_de/`
+  - `research_design_rater/static/research_design_rater/designs/pdf_en/`
+
+### Schritte
+
+1. CSV-Datei in das Projektverzeichnis legen mit den Namen oTree_export.csv  
+
+2. In den `scripts`-Ordner wechseln:
+   ```bash
+   cd scripts
+   
+3. Metadaten-Skript ausführen:
+   python generate_metadata.py
+   
+4. Ergebnisse prüfen:
+   
+   Das Skript erzeugt für jedes Forschungsdesign eine .md-Datei mit Metadaten, darunter:
+
+- durchschnittliche Bewertung
+- Anzahl der Bewertungen
+- Sprache (Deutsch oder Englisch, basierend auf der Ordnerstruktur)
+- Seitenanzahl des PDFs
+
 ## 🙏 Vielen Dank!
 
 Falls Fragen entstehen oder das Tool nicht wie erwartet funktioniert, bitte einfach im Teams-Chat melden.
